@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - gha/deno-echo/**
+      - .github/actions/deno-echo/**
+      - .github/workflows/ci_1.yaml
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/deno-echo
+        with:
+          greeting: 'Hello, world!'
