@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import styles from './Gallery.module.css'
 
 interface ImageInfo {
@@ -11,7 +10,7 @@ interface Props {
   imageInfo: ImageInfo
 }
 
-export const ImageItem: FC<Props> = ({ imageInfo }) => {
+export const ImageItem = ({ imageInfo }: Props) => {
   return (
     <>
       <span>{imageInfo.title}</span>

@@ -1,4 +1,4 @@
-import { useState, type FC } from "react"
+import { useState } from "react"
 import styles from './Gallery.module.css'
 import { ImageItem } from "./ImageItem";
 
@@ -14,7 +14,7 @@ interface Props {
   rawImages: ImageInfo[]
 }
 
-export const Gallery: FC<Props> = ({ rawImages }) => {
+export const Gallery = ({ rawImages }: Props) => {
   const [displayedNum, setDisplayedNum] = useState<number>(DISPLAYED_IMAGES_PER_LOAD);
   const displayedImages = rawImages.slice(0, displayedNum);
   const isMore = displayedNum < rawImages.length;
