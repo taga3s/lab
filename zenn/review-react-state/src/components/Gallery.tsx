@@ -15,19 +15,13 @@ interface Props {
 }
 
 export const Gallery: FC<Props> = ({ rawImages }) => {
-  const [displayedImages, setDisplayedImages] = useState<ImageInfo[]>(rawImages.slice(0, DISPLAYED_IMAGES_PER_LOAD));
-  const [isMore, setIsMore] = useState<boolean>(DISPLAYED_IMAGES_PER_LOAD < rawImages.length);
+  const [displayedNum, setDisplayedNum] = useState<number>(DISPLAYED_IMAGES_PER_LOAD);
+  const displayedImages = rawImages.slice(0, displayedNum);
+  const isMore = displayedNum < rawImages.length;
 
   const loadMore = () => {
     if (isMore) {
-      const nextImages = displayedImages.concat(
-        rawImages.slice(displayedImages.length, displayedImages.length + DISPLAYED_IMAGES_PER_LOAD)
-      );
-      setDisplayedImages(nextImages);
-
-      if (nextImages.length >= rawImages.length) {
-        setIsMore(false);
-      }
+      setDisplayedNum(prev => prev + DISPLAYED_IMAGES_PER_LOAD);
     }
   }
 
