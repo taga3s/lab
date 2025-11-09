@@ -17,7 +17,7 @@ interface Props {
 export const Gallery = ({ rawImages }: Props) => {
   const [displayedNum, setDisplayedNum] = useState<number>(DISPLAYED_IMAGES_PER_LOAD);
   const displayedImages = rawImages.slice(0, displayedNum);
-  const isMore = displayedNum < rawImages.length;
+  const isMore = displayedImages.length < rawImages.length;
 
   const loadMore = () => {
     if (isMore) {
