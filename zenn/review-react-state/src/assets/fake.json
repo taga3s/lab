@@ -1,0 +1,54 @@
+{
+  "imageItems": [
+    {
+      "id": "1",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 1"
+    },
+    {
+      "id": "2",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 2"
+    },
+    {
+      "id": "3",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 3"
+    },
+    {
+      "id": "4",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 4"
+    },
+    {
+      "id": "5",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 5"
+    },
+    {
+      "id": "6",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 6"
+    },
+    {
+      "id": "7",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 7"
+    },
+    {
+      "id": "8",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 8"
+    },
+    {
+      "id": "9",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 9"
+    },
+    {
+      "id": "10",
+      "url": "https://placehold.jp/24/cc9999/993333/240x240.png",
+      "title": "Sample Image 10"
+    }
+  ]
+}
