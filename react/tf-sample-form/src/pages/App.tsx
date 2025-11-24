@@ -1,11 +1,14 @@
 import { useForm } from "@tanstack/react-form";
-import { TextInput } from "@/components/TextInputl";
+import { TextInput } from "@/components/TextInput";
+import { Select } from "@/components/Select";
+import { AGE_OPTIONS, INVALID_NOT_SELECTED } from "@/constants";
 
 export function App() {
 	const form = useForm({
 		defaultValues: {
 			firstName: "",
 			lastName: "",
+			age: INVALID_NOT_SELECTED,
 		},
 		onSubmit: async ({ value }) => {
 			// Do something with form data
@@ -15,12 +18,14 @@ export function App() {
 
 	return (
 		<div className="w-1/2 mx-auto mt-10 p-4 border border-gray-300 rounded">
+			<h1 className="text-2xl font-bold">サンプルフォーム</h1>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
 					e.stopPropagation();
 					form.handleSubmit();
 				}}
+				className="mt-8"
 			>
 				<div className="flex flex-col gap-4 w-full">
 					{/* A type-safe field component*/}
@@ -29,7 +34,7 @@ export function App() {
 						validators={{
 							onChange: ({ value }) =>
 								!value
-									? "苗字は必須です"
+									? "必須項目です"
 									: value.length < 1
 										? "苗字は1文字以上である必要があります"
 										: undefined,
@@ -46,6 +51,19 @@ export function App() {
 					<form.Field
 						name="lastName"
 						children={(field) => <TextInput label="名前（名）" field={field} />}
+					/>
+					<form.Field
+						name="age"
+						validators={{
+							onChange: ({ value }) => {
+								return value === INVALID_NOT_SELECTED
+									? "必須項目です"
+									: undefined;
+							},
+						}}
+						children={(field) => (
+							<Select label="年代" field={field} options={AGE_OPTIONS} />
+						)}
 					/>
 				</div>
 				<div className="mt-16">
