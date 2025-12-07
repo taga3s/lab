@@ -17,6 +17,7 @@ type MyPick<
 
 type TodoPreview = MyPick<Todo, "title" | "completed">;
 
+// deno-lint-ignore no-unused-vars
 const todo: TodoPreview = {
   title: "Clean room",
   completed: false,
