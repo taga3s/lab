@@ -14,4 +14,8 @@ jobs:
       - uses: actions/checkout@v7
       - run: echo "${{ github.ref }}"
       - run: echo "${{ github.event.pull_request.base.sha }}"
+      - run: |
+          COMPARE_BASE_REF="origin/${GITHUB_BASE_REF}"
+          COMPARE_BASE_SHA="$(git rev-parse --short "${COMPARE_BASE_REF}")"
+          git diff --name-only $COMPARE_BASE_SHA HEAD
       - uses: ./.github/actions/node-echo
