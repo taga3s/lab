@@ -1,3 +1,3 @@
 # lab
 
-This is lab repository for checking behavivors, testing, etc...
+This is lab repository for checking behavivors of various projects
