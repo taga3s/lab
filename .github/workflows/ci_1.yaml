@@ -17,8 +17,7 @@ jobs:
           fetch-depth: 0
       - run: |
           COMPARE_BASE_REF="origin/${GITHUB_BASE_REF}"
-          COMPARE_BASE_SHA=$(git rev-parse --short "${GITHUB_BASE_REF}")
-          echo $COMPARE_BASE_SHA
+          echo $COMPARE_BASE_REF
       - uses: ./.github/actions/deno-echo
         with:
           greeting: 'Hello, world!'
