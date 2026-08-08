@@ -1,7 +1,7 @@
 name: CI
 
 on:
-  push:
+  pull_request:
     paths:
       - .github/actions/node-echo/**
       - .github/workflows/ci_2.yaml
@@ -12,5 +12,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - run: echo "${ github.ref }"
+      - run: echo "${{ github.ref }}"
       - uses: ./.github/actions/node-echo
