@@ -17,6 +17,8 @@ jobs:
       - run: |
             echo "${GITHUB_REF}: ${GITHUB_SHA}"
       - run: git show HEAD
+      - run: git show HEAD^1
+      - run: git show HEAD^2
       - name: diff with github.event.pull_request.base.sha
         run: |
             echo ${{ github.event.pull_request.base.sha }}
@@ -25,5 +27,10 @@ jobs:
         run: |
           COMPARE_BASE_REF="origin/${GITHUB_BASE_REF}"
           COMPARE_BASE_SHA="$(git rev-parse "${COMPARE_BASE_REF}")"
+          echo $COMPARE_BASE_SHA
+          git diff --name-only "$COMPARE_BASE_SHA" HEAD
+      - name: diff with base_ref and HEAD^1
+        run: |
+          COMPARE_BASE_SHA="$(git rev-parse "HEAD^1")"
           echo $COMPARE_BASE_SHA
           git diff --name-only "$COMPARE_BASE_SHA" HEAD
