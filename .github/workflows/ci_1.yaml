@@ -5,6 +5,7 @@ on:
     paths:
       - .github/actions/deno-echo/**
       - .github/workflows/ci_1.yaml
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   ci:
