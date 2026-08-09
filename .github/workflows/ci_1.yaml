@@ -30,7 +30,7 @@ jobs:
           COMPARE_BASE_SHA="$(git rev-parse "${COMPARE_BASE_REF}")"
           echo $COMPARE_BASE_SHA
           git diff --name-only "$COMPARE_BASE_SHA" HEAD
-      - name: diff with base_ref and HEAD^1
+      - name: diff with HEAD^1
         run: |
           COMPARE_BASE_SHA="$(git rev-parse "HEAD^1")"
           echo $COMPARE_BASE_SHA
